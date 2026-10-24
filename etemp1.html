@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Resume</title>
+    <link href="temp_2.css" rel="stylesheet">
+    <style>
+    button{
+            display:block;
+            margin:20px auto;
+            padding:10px 30px;
+            font-size:16px;
+            border:none;
+            border-radius:8px;
+            background:#1b3556;
+            color:#fff;
+            cursor:pointer;
+        }
+
+        button:hover{
+            background:#315b8a;
+        }
+        </style>
+</head>
+
+<body>
+
+<div class="resume">
+
+    <div class="header">
+
+        <h1 id="name"></h1>
+
+        <h3 id="role"></h3>
+
+    </div>
+
+    <div class="main">
+
+        <!-- LEFT -->
+
+        <div class="left">
+
+            <div class="contact">
+
+                <h2>Contact</h2>
+
+                <p><b>Email :</b> <span id="email"></span></p>
+
+                <p><b>Phone :</b> <span id="phone"></span></p>
+
+                <p><b>LinkedIn :</b> <span id="url"></span></p>
+
+                <p><b>Location :</b> <span id="location"></span></p>
+
+            </div>
+
+
+            <div class="soft">
+
+                <h2>Soft Skills</h2>
+
+                <p id="softskill"></p>
+
+            </div>
+
+            <div class="technical">
+
+                <h2>Technical Skills</h2>
+
+                <p id="technical"></p>
+
+            </div>
+
+
+            <div class="language">
+
+                <h2>Languages</h2>
+
+                <p id="language"></p>
+
+            </div>
+
+            <div class="course">
+
+                <h2>Course</h2>
+
+                <p id="course"></p>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- RIGHT -->
+
+        <div class="right">
+
+            <div class="objective">
+
+                <h2>Career Objective</h2>
+
+                <p id="objective">Results-driven and detail-oriented professional with a proven track record of delivering high-quality work and optimizing daily operations. Adept at managing projects, solving complex problems, and collaborating across teams to achieve organizational goals. Seeking to bring my domain expertise, strong work ethic, and dedication to excellence into a dynamic new role that fosters mutual growth.</p>
+
+            </div>
+
+
+            <div class="education">
+
+                <h2>Education</h2>
+
+                <p id="education"></p>
+
+            </div>
+
+
+            <div class="experience">
+
+                <h2>Experience</h2>
+
+                <p id="experience"></p>
+
+            </div>
+
+
+            <div class="project">
+
+                <h2>Projects</h2>
+
+                <p id="project"></p>
+
+            </div>
+
+
+            
+
+        </div>
+
+    </div>
+    </div>
+
+    <button onclick="downloadResume()">Download</button>
+
+
+
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+<script src="experience.js"></script>
+</body>
+</html>

@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Resume</title>
+
+    <style>
+
+        *{
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
+        }
+
+        body{
+            margin:0;
+            padding:20px;
+            background:#f2f2f2;
+            font-family:Arial,sans-serif;
+        }
+
+        .resume{
+            width:210mm;
+            /* height:297mm; */
+            font-size: 11px;
+            margin:auto;
+            background:#fff;
+            box-shadow:0 0 10px rgba(0,0,0,0.2);
+            overflow:hidden;
+            line-height: 1.2;
+        }
+
+        .header{
+            background:#b7d0e6;
+            text-align:center;
+            padding:35px 20px;
+        }
+
+        .header h1{
+            font-size:28px;
+            color:#1b3556;
+            margin-bottom:8px;
+        }
+
+        .header h3{
+            font-size:20px;
+            color:#555;
+            font-weight:normal;
+        }
+
+        .main{
+            display:flex;
+        }
+
+        .left{
+            width:35%;
+            background:#f8f8f8;
+            border-right:2px solid #d6d6d6;
+            padding:25px;
+        }
+
+        .right{
+            width:65%;
+            padding:25px;
+        }
+
+        .contact,
+        .soft,
+        .language,
+        .course,
+        .objective,
+        .education,
+        .technical,
+        .project{
+            margin-bottom:8px;
+        }
+
+        h2{
+            font-size:14px;
+            color:#1b3556;
+            border-bottom:2px solid #1b3556;
+            padding-bottom:6px;
+            margin-bottom:12px;
+        }
+
+        p{
+            font-size:10px;
+            line-height:1.7;
+            word-wrap:break-word;
+        }
+
+        span{
+            word-break:break-word;
+        }
+
+        button{
+            display:block;
+            margin:20px auto;
+            padding:10px 30px;
+            font-size:16px;
+            border:none;
+            border-radius:8px;
+            background:#1b3556;
+            color:#fff;
+            cursor:pointer;
+        }
+
+        button:hover{
+            background:#315b8a;
+        }
+
+        .contact,
+        .soft,
+        .language,
+        .course,
+        .objective,
+        .education,
+        .technical,
+        .project{
+            break-inside:avoid;
+            page-break-inside:avoid;
+        }
+
+        /* @media print{
+
+            body{
+                background:white;
+                padding:0;
+            }
+
+            .resume{
+                width:210mm;
+                min-height:297mm;
+                margin:0;
+                box-shadow:none;
+            }
+
+            button{
+                display:none;
+            }
+        } */
+
+    </style>
+
+</head>
+
+<body>
+
+<div class="resume">
+
+    <div class="header">
+
+        <h1 id="name"></h1>
+
+        <h3 id="role"></h3>
+
+    </div>
+
+    <div class="main">
+
+        <!-- LEFT -->
+
+        <div class="left">
+
+            <div class="contact">
+
+                <h2>Contact</h2>
+
+                <p><b>Email :</b> <span id="email"></span></p>
+
+                <p><b>Phone :</b> <span id="phone"></span></p>
+
+                <p><b>LinkedIn :</b> <span id="url"></span></p>
+
+                <p><b>Location :</b> <span id="location"></span></p>
+
+            </div>
+
+
+            <div class="soft">
+
+                <h2>Soft Skills</h2>
+
+                <p id="softskill"></p>
+
+            </div>
+
+
+            <div class="language">
+
+                <h2>Languages</h2>
+
+                <p id="language"></p>
+
+            </div>
+
+            <div class="course">
+
+                <h2>Course</h2>
+
+                <p id="course"></p>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- RIGHT -->
+
+        <div class="right">
+
+            <div class="objective">
+
+                <h2>Career Objective</h2>
+
+                <p id="objective">Enthusiastic and highly motivated graduate with a strong academic foundation and a quick learning curve. Possesses excellent communication, analytical, and problem-solving skills, with a proven ability to work effectively in team environments. Seeking a challenging entry-level position where I can apply my foundational knowledge, contribute to company growth, and continuously develop my professional skillset.</p>
+
+            </div>
+
+
+            <div class="education">
+
+                <h2>Education</h2>
+
+                <p id="education"></p>
+
+            </div>
+
+
+            <div class="technical">
+
+                <h2>Technical Skills</h2>
+
+                <p id="technical"></p>
+
+            </div>
+
+
+            <div class="project">
+
+                <h2>Projects</h2>
+
+                <p id="project"></p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    </div>
+
+    <button onclick="downloadResume()">Download</button>
+
+
+
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+
+</body>
+
+<script>
+
+
+//personal
+
+var userfname = localStorage.getItem("fname");
+var userlname = localStorage.getItem("lname");
+var useremail = localStorage.getItem("mail");
+var userphn = localStorage.getItem("num");
+var userurl = localStorage.getItem("linkk");
+var userlocation = localStorage.getItem("loc");
+
+document.getElementById("name").innerHTML =
+userfname + " " + userlname;
+
+document.getElementById("role").innerHTML =
+"Fresher";
+
+document.getElementById("email").innerHTML =
+useremail;
+
+document.getElementById("phone").innerHTML =
+userphn;
+
+document.getElementById("url").innerHTML =
+userurl;
+
+document.getElementById("location").innerHTML =
+userlocation;
+
+// College Details
+var collegeDetails = JSON.parse(localStorage.getItem("collegeDetails")) || [];
+
+var collegeHTML = "";
+
+collegeDetails.forEach(function(college, index){
+
+    collegeHTML += 
+    "<b>Degree:</b> " + college.degree + "<br>" +
+    "<b>College:</b> " + college.college + "<br>" +
+    "<b>Duration:</b> " + college.start + " - " + college.end + "<br>" +
+    "<b>Percentage:</b> " + college.percentage + "%<br><br>";
+
+});
+
+// 12th Details
+var school12 = localStorage.getItem("name");
+var year12 = localStorage.getItem("year");
+//var mark12 = localStorage.getItem("mark");
+//var total12 = localStorage.getItem("tot");
+var percent12 = localStorage.getItem("percent");
+
+// 10th Details
+var school10 = localStorage.getItem("sname");
+var ssyear = localStorage.getItem("ssyear");
+var slyear = localStorage.getItem("slyear");
+//var smark = localStorage.getItem("smark");
+//var stot = localStorage.getItem("stot");
+var spercent = localStorage.getItem("spercent");
+
+if(collegeDetails.length>0 ||
+   school12 || year12 || percent12 ||
+   school10 || ssyear || slyear || spercent){
+
+document.getElementById("education").innerHTML =
+collegeHTML +
+
+"<b>Higher Secondary (12th)</b><br>" +
+"School: " + school12 + "<br>" +
+"Year: " + year12 + "<br>" +
+"Percentage: " + percent12 + "%<br><br>" +
+
+"<b>SSLC (10th)</b><br>" +
+"School: " + school10 + "<br>" +
+"Duration: " + ssyear + " - " + slyear + "<br>" +
+"Percentage: " + spercent + "%";
+
+}else{
+document.getElementById("education").closest(".education").style.display="none";
+}
+
+//skill
+
+var html = localStorage.getItem("html");
+var css = localStorage.getItem("css");
+var javascript = localStorage.getItem("javascript");
+var python = localStorage.getItem("python");
+var sql = localStorage.getItem("sql");
+var othertech = localStorage.getItem("othertech");
+
+var communication = localStorage.getItem("communication");
+var teamwork = localStorage.getItem("teamwork");
+var creativity = localStorage.getItem("creativity");
+var adaptability = localStorage.getItem("adaptability");
+var othersoft = localStorage.getItem("othersoft");
+
+var tamil = localStorage.getItem("tamil");
+var english = localStorage.getItem("english");
+var hindi = localStorage.getItem("hindi");
+var otherlang = localStorage.getItem("otherlang");
+
+var tech = [];
+
+["html","css","javascript","python","sql","othertech"].forEach(function(key){
+    var value = localStorage.getItem(key);
+    if(value){
+        tech.push(value);
+    }
+});
+
+if(tech.length > 0){
+    document.getElementById("technical").innerHTML = tech.join("<br>");
+}else{
+    document.getElementById("technical").closest(".technical").style.display="none";
+}
+
+var soft = [];
+
+["communication","teamwork","creativity","adaptability","othersoft"].forEach(function(key){
+    var value = localStorage.getItem(key);
+    if(value){
+        soft.push(value);
+    }
+});
+
+if(soft.length > 0){
+    document.getElementById("softskill").innerHTML = soft.join("<br>");
+}else{
+    document.getElementById("softskill").closest(".softskill").style.display="none";
+}
+
+var language = [];
+
+["tamil","english","hindi","otherlang"].forEach(function(key){
+    var value = localStorage.getItem(key);
+    if(value){
+        language.push(value);
+    }
+});
+
+if(language.length > 0){
+    document.getElementById("language").innerHTML = language.join("<br>");
+}else{
+    document.getElementById("language").closest(".language").style.display="none";
+}
+
+//project
+var proname = localStorage.getItem("proname") || "";
+var prodesc = localStorage.getItem("prodesc") || "";
+var tool = localStorage.getItem("tool") || "";
+
+if(proname || prodesc || tool){
+
+var project = "";
+
+if(proname){
+project += "<b>Project:</b> " + proname + "<br><br>";
+}
+
+if(prodesc){
+project += "<b>Description:</b><br>" + prodesc + "<br><br>";
+}
+
+if(tool){
+project += "<b>Tools:</b> " + tool;
+}
+
+document.getElementById("project").innerHTML = project;
+
+}else{
+document.getElementById("project").closest(".project").style.display="none";
+}
+
+//course
+var course = localStorage.getItem("course")||"";
+if(course){
+document.getElementById("course").innerHTML = course;
+}else{
+document.getElementById("course").closest(".course").style.display="none";
+}
+
+function downloadResume() {
+
+    const element = document.querySelector(".resume");
+
+    html2pdf().set({
+        margin: [0, 0, 0, 0],
+        filename: "My_Resume.pdf",
+        image: {
+            type: "jpeg",
+            quality: 1
+        },
+        html2canvas: {
+            scale: 1.5,
+            scrollY: 0,
+            useCORS: true
+        },
+        jsPDF: {
+            unit: "mm",
+            format: "a4",
+            orientation: "portrait"
+        },
+        pagebreak: {
+            mode: []
+        }
+    }).from(element).save();
+}
+</script>
+
+
+
+</html>

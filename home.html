@@ -1,0 +1,122 @@
+<html>
+    <head>
+      <title>Home</title>
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.1/css/all.min.css">
+      <style>
+        body{
+            background-color: rgb(222, 240, 245);
+        }
+        .content{
+            width: 100%;
+            height:70%;
+            background-image: url("main.png");
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+        }
+      
+        .cards{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .card1,.card2,.card3{
+            background-color: white;
+            margin:40px 20px;
+            border-radius: 20px;
+            width: 25%;
+            text-align: center;
+            padding-top: 10px;
+        }
+
+        .cards p{
+            font-size: 20px;
+        }
+        .cards i{
+            font-size: 40px;
+        } 
+
+        .new{
+            /* padding:30px 0 0 20px; */
+            color:#1daed8;
+            font-size: 40px;
+            margin: 0;
+            padding: 0;
+            margin-left:40px;
+            font-size: 60px;
+        }
+
+        h1{
+            /* text-decoration:underline; */
+            margin-left: 40px;
+            padding:30px 0 0 20px;
+            margin-bottom: 60px;
+            font-size: 50px;
+            
+        }
+
+         #fresher,#experience{
+            font-size: 25px;
+            border-radius: 10px;
+            margin-right: 20px;
+        }
+
+        #fresher:hover,#experience:hover{
+            background-color: #1daed8;
+        }
+
+        .button{
+            margin: 30px 0 0 60px;
+        }
+
+        p{
+            margin-left:40px;
+            font-size: 30px;
+        }
+      </style>
+    </head>
+    <body>
+       <div class="content">
+        <h1><i class="fa-solid fa-file-lines"></i>CVNova</h1>
+            <p class="new">Build Your</p>
+            <p class="new">Professional Resume</p>
+            <p><i>Create a modern friendly resume in <br> just a few simple steps</i></p>
+            <div class="button">
+                <button type="button" onclick="fresher()" id="fresher">Fresher<i class="fa-solid fa-right-long"></i></button>
+                <button type="button" onclick="experience()" id="experience">Experience<i class="fa-solid fa-right-long"></i></button>
+            </div>
+            <!-- <p style="font-weight: bold;"><i>Build your future</i><i class="fa-regular fa-heart" style="color: #2563eb;"></i></p> -->
+       </div>
+       <div class="cards">
+            <div class="card1">
+                <i class="fa-solid fa-file-lines"></i>
+                <h2>Easy Forms</h2>
+                <p>Fill in your details with simple forms.</p>
+            </div>
+            <div class="card2">
+                <i class="fa-solid fa-palette"></i>
+                <h2>Beautiful Templates</h2>
+                <p>Choose from a variety of templates.</p>
+            </div>
+            <div class="card3">
+                <i class="fa-solid fa-download"></i>
+                <h2>Download Option</h2>
+                <p>Get your resume in PDF instantly.</p>
+            </div>
+            
+       </div>
+    </body>
+    <script>
+        function fresher(){
+            sessionStorage.setItem("resumeType","fresher");
+            window.location.href = "personal_details.html"
+        }
+
+        function experience(){
+            sessionStorage.setItem("resumeType","experience");
+            window.location.href = "personal_details.html"
+        }
+    </script>
+</html>
+

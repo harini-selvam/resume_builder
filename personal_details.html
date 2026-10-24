@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Personal details</title>
+        <link href="tracker.css" rel="stylesheet">
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.1/css/all.min.css" rel="stylesheet">
+        <style>
+            #myform{
+                background-color:#fff;
+                width: 900px;
+                height: auto;
+                border-radius: 20px;
+                box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+                border: 1px solid #e7eef8;
+                padding: 40px;
+            }
+
+            input{
+                height: 48px;
+                border-radius: 10px;
+                border: 1px solid #d9e3f0;
+                background: #ffffff;
+                padding-left: 15px;
+                font-size: 15px;
+            }
+
+            label{
+                display: flex;
+                margin-bottom: 8px;
+                font-weight: 600;
+                font-size: 16px;
+                color: #2c3e50;
+                gap: 8px;
+            }
+
+            #field{
+                margin-bottom: 24px;
+                flex: 1;
+            }
+
+            input::placeholder{
+                color: #9ca3af;
+                font-size: 14px;
+            }
+
+            #row{
+                display: flex;
+                gap: 40px;
+            }
+
+            #field input{
+                width: 100%;
+            }
+
+            p{
+                font-size: 18px;
+                background-color: #f4f8ff;
+                border-radius: 10px;
+                border: 1px solid #d9e3f0;
+                padding: 16px 20px;
+                width: 80%;
+            }
+
+            .but2,.but3{
+                width: 145px;
+                height: 48px;
+                background: #FFFFFF;
+                color: #6B7280;
+                border: 1px solid #D9E3F0;
+                border-radius: 12px;
+                font-size: 16px;
+                font-weight: 500;
+                cursor: pointer;
+                background-color: #f4f8ff;
+            }
+
+            .but2 i{
+                margin-right: 8px;
+                color: #6B7280;
+            }
+
+            .but2 i,.but3 i{
+                color: black;
+            }
+
+            .but2:hover,.but3:hover{
+                background-color: #1daed8;
+            }
+
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <div class="tracker" data-step="1">
+                    <h2>TRACKER</h2>
+
+                    <div class="step" data-number="1">
+                        <div class="circle">1</div>
+                        <span>Personal Details</span>
+                    </div>
+
+                    <div class="line"></div>
+
+                    <div class="step" data-number="2">
+                        <div class="circle">2</div>
+                        <span>Education</span>
+                    </div>
+
+                    <div class="line"></div>
+
+                    <div class="step" data-number="3">
+                        <div class="circle">3</div>
+                        <span>Skills</span>
+                    </div>
+
+                    <div class="line"></div>
+
+                    <div class="step" data-number="4">
+                        <div class="circle">4</div>
+                        <span>Projects</span>
+                    </div>
+
+                    <div class="line"></div>
+
+                    <div class="step experience-step" data-number="5">
+                        <div class="circle">5</div>
+                        <span>Experience</span>
+                    </div>
+
+                    <div class="line"></div>
+
+                    <div class="step" data-number="6">
+                        <div class="circle">6</div>
+                        <span>Resume</span>
+                    </div>
+
+                </div>
+            <div class="content">
+                 <h3><i class="fa-solid fa-user"></i> Personal details</h3>
+                  <div class="top">
+                    <a href="home.html">Home</a>
+                </div>
+            <form id="myform">
+                <div id="row">
+                    <div id="field">
+                        <label><i class="fa-solid fa-user"></i>First Name<span style="color:red">*</span>:</label> 
+                        <input type="text" id="fname"><br><br>
+                    </div>
+                
+
+                
+                    <div id="field">
+                        <label><i class="fa-solid fa-user"></i></i>Last Name<span style="color:red">*</span>:</label>
+                        <input type="text" id="lname"><br><br>
+                    </div>
+                </div>
+                
+                <div id="row">
+                    <div id="field">
+                        <label><i class="fa-solid fa-envelope"></i>Email address<span style="color:red">*</span>:</label>
+                        <input type="email" id="mail"><br><br>
+                    </div>
+               
+
+                
+                    <div id="field">
+                        <label><i class="fa-solid fa-phone"></i>Phone number<span style="color:red">*</span>:</label>
+                        <input type="number" id="num"><br><br>
+                    </div>
+                </div>
+
+                <div id="row">
+                    <div id="field">
+                        <label><i class="fa-solid fa-link"></i>Linkedin URL:</label>
+                        <input type="url" id="linkk"><br><br>
+                    </div>
+                
+                    <div id="field">
+                        <label><i class="fa-solid fa-location-pin"></i>Location<span style="color:red">*</span>:</label>
+                        <input type="text" id="loc"><br><br>
+                    </div>
+                </div>
+
+                 
+            </form>
+            <p><i class="fa-solid fa-lightbulb"></i>Tip:Make sure your details are correct.You can always go back and edit later</p>
+            <div id="buttons">
+                <button class="but2" type="reset"><i class="fa-solid fa-rotate-left"></i>Reset</button>
+                <button class="but3" type="button" onclick="save()">Next<i class="fa-solid fa-arrow-right"></i></button>
+            </div>
+            </div>
+  
+        <script src="tracker.js"></script>
+    </body>
+    <script>     
+        function save(){
+        var ufname = document.getElementById("fname").value;
+        var ulname = document.getElementById("lname").value;
+        var emailid = document.getElementById("mail").value;
+        var phn = document.getElementById("num").value;
+        var url = document.getElementById("linkk").value;
+        var loca = document.getElementById("loc").value;
+        localStorage.setItem("fname",ufname);
+        localStorage.setItem("lname",ulname);
+        localStorage.setItem("mail",emailid);
+        localStorage.setItem("num",phn);
+        localStorage.setItem("linkk",url);
+        localStorage.setItem("loc",loca);
+        window.location.href = "education_detail.html";
+        }
+    </script> 
+</html>

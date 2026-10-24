@@ -1,0 +1,71 @@
+body{
+            margin:0;
+            padding:0;
+            background:#f2f2f2;
+            font-family:Arial,sans-serif;
+        }
+
+        .resume{
+            width:210mm;
+            min-height: 297mm;
+            margin:auto;
+            background:white;
+            box-shadow:0 0 10px gray;
+            box-sizing: border-box;
+            overflow: hidden;
+        }
+
+        .header{
+            background:#b7d0e6;
+            text-align:center;
+            padding:25px;
+        }
+
+        .header h1{
+            margin:0;
+            font-size:38px;
+        }
+
+        .header h3{
+            margin-top:10px;
+            color:#555;
+        }
+
+        .main{
+            display:flex;
+            
+        }
+
+        .left{
+            width:35%;
+            padding:20px;
+            border-right:2px solid gray;
+        }
+
+        .right{
+            width:65%;
+            padding:20px;
+        }
+
+        .contact,
+        .soft,
+        .language,
+        .objective,
+        .education,
+        .technical,
+        .project,
+        .experience{
+            margin-bottom:15px;
+            break-inside: avoid;
+            page-break-inside: avoid;
+        }
+
+        h2{
+            color:#1b3556;
+            border-bottom:2px solid #1b3556;
+            padding-bottom:5px;
+        }
+
+        p{
+            line-height:1.4;
+        }

@@ -1,0 +1,113 @@
+<!DOCTYPE>
+<html>
+    <head>
+        <title>Template</title>
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.1/css/all.min.css" rel="stylesheet">
+        <style>
+            body{
+                background-image: url('template_bg.png');
+            }
+
+            .fcontent,.econtent{
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                /* background-color: #fff; */
+                margin-top: 40px auto;
+                margin-left: 40px;
+                width: 90%;
+                padding: 30px;
+            }
+
+            .top{
+                position: fixed;
+                top:20px;
+                right: 30px;
+                font-size: 30px;
+            }
+
+            .left{
+                width: 30%;
+                font-size: 20px;
+            }
+
+            .right{
+                display: flex;
+                width: 50%;
+                gap:50px;
+            }
+
+            #but{
+                margin-top: 10px;
+                border-radius: 10px;
+                border: 1px solid #D9E3F0;
+                height: 40px;
+                width: 50%;
+            }
+
+            #but:hover{
+                background-color: #1daed8;
+            }
+           
+            h1{
+                text-align: center;
+                text-decoration: underline;
+            }
+        </style>
+    </head>
+    <body>
+            <h1><i class="fa-solid fa-book"></i>Resume Template</h1>
+             <div class="top">
+                    <a href="home.html">Home</a>
+                </div>
+        <div class="fcontent">
+            <div class="left">
+                <h2><i class="fa-solid fa-graduation-cap"></i>Freshers</h2>
+                <p>Perfect template for students and recent graduates</p>
+            </div>
+            <div class="right">
+                <div class="templates">
+                    <img src="ftemp1.png" alt="template" height="300px" width="300px">
+                    <center><button id="but" onclick="t1()">CREATE<i class="fa-solid fa-arrow-right"></i></button></center>
+                </div>
+                <div class="templates">
+                    <img src="ftemp2.png" alt="template" height="300px" width="300px">
+                    <center><button id="but" onclick="t2()">CREATE<i class="fa-solid fa-arrow-right"></i></button></center>
+                </div>
+            </div>
+        </div>
+         <div class="econtent">
+            <div class="left">
+                <h2><i class="fa-solid fa-briefcase"></i>Experience</h2>
+                <p>Perfect template for proffessionals</p>
+            </div>
+            <div class="right">
+                <div class="templates">
+                    <img src="etemp1.png" alt="template" height="300px" width="300px">
+                    <center><button id="but" onclick="t3()">CREATE<i class="fa-solid fa-arrow-right"></i></button></center>
+                </div>
+                <div class="templates">
+                    <img src="etemp2.png" alt="template" height="300px" width="300px">
+                    <center><button id="but"onclick="t4()">CREATE<i class="fa-solid fa-arrow-right"></i></button></center>
+                </div>
+            </div>
+        </div>
+    </body>
+    <script>
+        function t1(){
+            window.location.href = "ftemplate1.html"
+        }
+
+        function t2(){
+            window.location.href = "ftemplate2.html"
+        }
+
+        function t3(){
+            window.location.href = "etemp1.html"
+        }
+
+        function t4(){
+            window.location.href = "etemp2.html"
+        }
+    </script>
+</html>

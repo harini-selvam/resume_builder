@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Experience details</title>
+        <link href="tracker.css" rel="stylesheet">
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.1/css/all.min.css" rel="stylesheet">
+        <style>
+            .but1,.but2,.but3{
+                width: 145px;
+                height: 48px;
+                /* background: #FFFFFF; */
+                color: #6B7280;
+                border: 1px solid #D9E3F0;
+                border-radius: 12px;
+                font-size: 16px;
+                font-weight: 500;
+                cursor: pointer;
+                background-color: #f4f8ff;
+                color: black;
+            }
+
+            .myform{
+                background-color:#fff;
+                width: 850px;
+                height: auto;
+                border-radius: 20px;
+                box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+                border: 1px solid #e7eef8;
+                padding: 25px;
+            }
+
+            input{
+                height: 48px;
+                border-radius: 10px;
+                border: 1px solid #d9e3f0;
+                background: #ffffff;
+                padding-left: 15px;
+                font-size: 15px;
+            }
+
+            label{
+                display: flex;
+                margin-bottom: 8px;
+                font-weight: 600;
+                font-size: 16px;
+                color: #2c3e50;
+                gap: 8px;
+            }
+
+            p{
+                font-size: 18px;
+                background-color: #f4f8ff;
+                border-radius: 10px;
+                border: 1px solid #d9e3f0;
+                padding: 16px 20px;
+                width: 80%;
+            }
+            .but1:hover,.but2:hover,.but3:hover{
+                background-color: #1daed8;
+            }
+
+            .myform input,.myform textarea{
+                width:60%;
+            }
+        </style>
+    </head>
+    <body>
+        
+        <div class="container">
+            <div class="tracker" data-step="5">
+
+    <h2>TRACKER</h2>
+
+    <div class="step" data-number="1">
+        <div class="circle">1</div>
+        <span>Personal Details</span>
+    </div>
+
+    <div class="line"></div>
+
+    <div class="step" data-number="2">
+        <div class="circle">2</div>
+        <span>Education</span>
+    </div>
+
+    <div class="line"></div>
+
+    <div class="step" data-number="3">
+        <div class="circle">3</div>
+        <span>Skills</span>
+    </div>
+
+    <div class="line"></div>
+
+    <div class="step" data-number="4">
+        <div class="circle">4</div>
+        <span>Projects</span>
+    </div>
+
+    <div class="line"></div>
+
+    <div class="step experience-step" data-number="5">
+        <div class="circle">5</div>
+        <span>Experience</span>
+    </div>
+
+    <div class="line"></div>
+
+    <div class="step" data-number="6">
+        <div class="circle">6</div>
+        <span>Resume</span>
+    </div>
+
+</div>
+            <div class="content">
+                 <div class="top">
+                    <a href="home.html">Home</a>
+                </div>
+                
+                <h2><i class="fa-solid fa-user-tie"></i>Experience</h2>
+            <form class="myform">
+                
+                <label><i class="fa-solid fa-user-tie"></i>Job role<span style="color:red">*</span>:</label>
+                <input type="text" id="jname" required><br><br>
+
+                <label><i class="fa-solid fa-calendar-days"></i>Duration<span style="color:red">*</span>:</label>
+                <input type="email" id="duration" required><br><br>
+
+                <label><i class="fa-solid fa-city"></i>Company<span style="color:red">*</span>:</label>
+                <input type="text" id="company" required><br><br>
+
+                <label><i class="fa-solid fa-file-lines"></i>Job description:</label>
+                <textarea id="jdescription" rows="5" cols="40"
+                placeholder="--Job description--" required></textarea>
+
+            </form>
+            
+            <p><i class="fa-solid fa-lightbulb"></i>Tip: Make sure your details are correct. You can always go back and edit later.</p>
+            <div>
+                <button class="but1" type="button" onclick="back()"><i class="fa-solid fa-arrow-left"></i>Back</button>
+                <button class="but2" type="reset"><i class="fa-solid fa-rotate-left"></i>Reset</button>
+                <button class="but3" type="submit" onclick="finish()">Next<i class="fa-solid fa-arrow-right"></i></button>
+            </div>
+                </div>
+            </div>
+        </div>
+        <script src="tracker.js"></script>
+    </body>
+    <script>
+        const myForm = document.getElementById('myform'); 
+    myForm.addEventListener('submit', function(event) {  
+        event.preventDefault();
+        var jrole = document.getElementById("jname").value;
+        var jduration = document.getElementById("duration").value;
+        var jcompany = document.getElementById("company").value;
+        var jdesc = document.getElementById("jdescription").value;
+
+        localStorage.setItem("janme",jrole);
+        localStorage.setItem("duration",jduration);
+        localStorage.setItem("company",jcompany);
+        localStorage.setItem("jdescription",jdesc);
+        
+        window.location.href = "template.html";
+    });
+
+        function back(){
+        window.location.href = "project.html"
+        }
+
+        function finish(){
+            window.location.href = "template.html"
+        }
+    </script>
+</html>

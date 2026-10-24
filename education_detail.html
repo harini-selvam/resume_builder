@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Education details</title>
+        <link href="tracker.css" rel="stylesheet">
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.1/css/all.min.css" rel="stylesheet">
+
+        <style>
+            
+            h5{
+                margin-top: 0;
+                margin-bottom: 10px;
+            }
+
+            /* .clg,.schl1,.schl2{
+                background-color:#fff;
+                width: 900px;
+                height: auto;
+                border-radius: 20px;
+                box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+                border: 1px solid #e7eef8;
+                padding:20px 40px 5px 40px;
+            } */
+
+            input{
+                height: 40px;
+                border-radius: 10px;
+                border: 1px solid #d9e3f0;
+                background: #ffffff;
+                padding-left: 15px;
+                font-size: 15px;
+            }
+
+            label{
+                display: flex;
+                margin-bottom: 4px;
+                font-weight: 600;
+                font-size: 16px;
+                color: #2c3e50;
+                gap: 8px;
+            }
+
+            .field{
+                margin-bottom: 10px;
+                flex: 1;
+            }
+
+            input::placeholder{
+                color: #9ca3af;
+                font-size: 14px;
+            }
+
+            .row{
+                display: flex;
+                gap: 30px;
+                margin-bottom: 10px;
+            }
+
+            .field input{
+                width: 100%;
+            }
+
+            p{
+                font-size: 18px;
+                background-color: #f4f8ff;
+                border-radius: 10px;
+                border: 1px solid #d9e3f0;
+                padding: 16px 20px;
+                width: 80%;
+            }
+
+            .but1,.but2,.but3{
+                width: 145px;
+                height: 48px;
+                background: #FFFFFF;
+                color: #6B7280;
+                border: 1px solid #D9E3F0;
+                border-radius: 12px;
+                font-size: 16px;
+                font-weight: 500;
+                cursor: pointer;
+                background-color: #f4f8ff;
+                color: black;
+            }
+
+            .but2 i{
+                margin-right: 8px;
+                color: #6B7280;
+            }
+
+          
+            .but1:hover,.but2:hover,.but3:hover{
+                background-color: #1daed8;
+            }
+
+            .main{
+    margin-bottom:20px;
+}
+
+.header{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:18px 25px;
+    background:#fff;
+    border:1px solid #E7EEF8;
+    border-radius:15px;
+    cursor:pointer;
+    box-shadow:0 4px 15px rgba(0,0,0,.05);
+}
+
+.header:hover{
+    background: #EAF2FF;
+}
+
+.header span:first-child{
+    font-size: 18px;
+    font-weight: 600;
+    color: #2C3E50;
+}
+
+.arrow{
+    font-size: 18px;
+    color: #2563EB;
+    transition: 0.3s;
+}
+
+/* Forms */
+
+.clg,
+.schl1,
+.schl2{
+    width: 900px;
+    background: white;
+    border: 1px solid #E7EEF8;
+    border-radius: 20px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+    padding: 20px 40px;
+    margin-bottom: 20px;
+}
+
+/* Initially */
+
+.schl1,
+.schl2{
+    display: none;
+}
+
+/* Completed Header */
+
+/* .completed{
+    background: #ECFDF5;
+    border: 1px solid #BBF7D0;
+} */
+
+/* Active Header */
+
+/* .active{
+    background: #EAF2FF; 
+     border: 1px solid #93C5FD;
+} */
+
+.save{
+    width:150px;
+    height:45px;
+    background:#2563EB;
+    color:white;
+    border:none;
+    border-radius:10px;
+    font-size:15px;
+    font-weight:600;
+    cursor:pointer;
+    float:right;
+    margin-top:15px;
+}
+
+.save:hover{
+    background:#1D4ED8;
+}
+
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <div class="tracker" data-step="2">
+
+    <h2>TRACKER</h2>
+
+    <div class="step" data-number="1">
+        <div class="circle">1</div>
+        <span>Personal Details</span>
+    </div>
+
+    <div class="line"></div>
+
+    <div class="step" data-number="2">
+        <div class="circle">2</div>
+        <span>Education</span>
+    </div>
+
+    <div class="line"></div>
+
+    <div class="step" data-number="3">
+        <div class="circle">3</div>
+        <span>Skills</span>
+    </div>
+
+    <div class="line"></div>
+
+    <div class="step" data-number="4">
+        <div class="circle">4</div>
+        <span>Projects</span>
+    </div>
+
+    <div class="line"></div>
+
+    <div class="step experience-step" data-number="5">
+        <div class="circle">5</div>
+        <span>Experience</span>
+    </div>
+
+    <div class="line"></div>
+
+    <div class="step" data-number="6">
+        <div class="circle">6</div>
+        <span>Resume</span>
+    </div>
+
+</div>
+            <div class="content">
+                <div class="top">
+                    <a href="home.html">Home</a>
+                </div>
+                <h2><i class="fa-solid fa-graduation-cap"></i>Education Details</h2>
+            <form class="myform">
+                <div class="main">
+                <div class="header" onclick="opensec('college')" >
+                    <span><i class="fa-solid fa-building-columns"></i>College detail</span>
+                    <i id="clgarrow" class="fa-solid fa-chevron-down"></i>
+                </div>
+                <div class="clg">
+                    <div class="row">
+                        <div class="field">
+                            <label><i class="fa-solid fa-school"></i>College Name<span style="color:red">*</span>:</label>
+                            <input type="text" id="cname" required><br><br>
+
+                        </div>
+                        <div class="field">
+                            <label><i class="fa-solid fa-graduation-cap"></i>Degree<span style="color:red">*</span></label>
+                            <input type="text" list="degrees" id="degree" placeholder="Type or select your degree" id="degree" style="width: 400px;">
+
+                            <datalist id="degrees">
+                                <option value="BCA">
+                                <option value="B.Sc Computer Science">
+                                <option value="B.Sc Mathematics">
+                                <option value="B.Com">
+                                <option value="BBA">
+                                <option value="BE Computer Science">
+                                <option value="BE Mechanical">
+                                <option value="B.Tech IT">
+                                <option value="Diplamo">
+                                <option value="B.Com with CA">
+                                <option value="MCA">
+                                <option value="M.Com">
+                                <option value="MBA">
+                                <option value="M.Tech">
+                            </datalist>
+                            <br><br>
+                        </div>
+                    </div>
+                   
+                   <div class="row">
+                        <div class="field">
+                            <label><i class="fa-solid fa-calendar"></i>Start Year<span style="color:red">*</span>:</label>
+                            <input type="month" id="csyear" required>
+                        </div>
+                        
+                        <div class="field">
+                            <label><i class="fa-solid fa-calendar"></i>End Year<span style="color:red">*</span>:</label>
+                            <input type="month" id="clyear" required><br><br>
+                        </div>
+                   </div> 
+                    
+                   <div class="row">
+                        <div class="field">
+                            <label>CGPA<span style="color:red">*</span>:</label>
+                            <input type="number" id="cgpa" onkeyup="percentage()" max=100 maxlength="3" required>
+                        </div>
+                        <div class="field">
+                            <label>Out of<span style="color:red">*</span>:</label>
+                            <input type="number" id="ctot" onkeyup="percentage()" max=100 maxlength="3" required><br><br>
+                        </div>
+                        <div class="field">
+                            <label><i class="fa-solid fa-percent"></i>Percentage:</label>
+                            <input type="text" id="cpercent">
+                        </div>
+                        <button class="save" type="button" onclick="save_clg()">Save</button>
+                        <button class="save" type="button" onclick="add()">+ Add another degree</button>
+                   </div>
+                
+                </div>
+                </div>
+                
+                <div class="main">
+                <div class="header" onclick="opensec('school1')" >
+                    <span><i class="fa-solid fa-building-columns"></i>12th detail</span>
+                    <i id="schl1arrow" class="fa-solid fa-chevron-down"></i>
+                </div>
+                <div class="schl1">
+                     <div class="field">
+                        <label><i class="fa-solid fa-school"></i>School Name<span style="color:red">*</span>:</label>
+                        <input type="text" id="name" required><br><br>
+                    </div>
+                    <div class="row">
+                        <div class="field">
+                            <label><i class="fa-solid fa-calendar"></i>Start Year<span style="color:red">*</span>:</label>
+                            <input type="month" id="syear" required>
+                        </div>
+                        <div class="field">
+                            <label><i class="fa-solid fa-calendar"></i>End Year<span style="color:red">*</span>:</label>
+                            <input type="month" id="lyear" required><br><br>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="field">
+                            <label>Marks obtained<span style="color:red">*</span>:</label>
+                            <input type="number" id="mark" onkeyup="higher_sec()" max=100 maxlength="3" required>
+                        </div>
+                        <div class="field">
+                            <label>Maximum mark<span style="color:red">*</span>:</label>
+                            <input type="number" id="tot" onkeyup="higher_sec()" max=100 maxlength="3"><br><br>
+                        </div>
+                       <div class="field">
+                            <label><i class="fa-solid fa-percent"></i>Percentage:</label>
+                            <input type="text" id="percent">
+                        </div>
+                        <button class="save" type="button" onclick="save_12th()">Save</button>
+                    </div>
+                </div>
+                </div>
+
+                <div class="main">
+                 <div class="header" onclick="opensec('school2')" >
+                    <span><i class="fa-solid fa-building-columns"></i>10th detail</span>
+                    <i id="schl2arrow" class="fa-solid fa-chevron-down"></i>
+                </div>
+                <div class="schl2">
+                    <div class="field">
+                        <label><i class="fa-solid fa-school"></i>School Name<span style="color:red">*</span>:</label>
+                        <input type="text" id="sname" required><br><br>
+                    </div>
+                    <div class="row">
+                        <div class="field">
+                            <label><i class="fa-solid fa-calendar"></i>Start Year<span style="color:red">*</span>:</label>
+                            <input type="month" id="ssyear" required>
+                        </div>
+                        <div class="field">
+                            <label><i class="fa-solid fa-calendar"></i>End Year<span style="color:red">*</span>:</label>
+                            <input type="month" id="slyear" required><br><br>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="field">
+                            <label>Marks obtained<span style="color:red">*</span>:</label>
+                            <input type="number" id="smark" onkeyup="s2percent()" max=100 maxlength="3" required>
+                        </div>
+                        <div class="field">
+                            <label>Maximum mark<span style="color:red">*</span>:</label>
+                            <input type="number" id="stot" onkeyup="s2percent()" max=100 maxlength="3" required><br><br>
+                        </div>
+                        <div class="field">
+                            <label><i class="fa-solid fa-percent"></i>Percentage:</label>
+                            <input type="text" id="spercent">
+                        </div>
+                        <button type="button" class="save" onclick="save_10th()">Save</button>
+                    </div>
+                    </div>
+                </div>
+            
+                            <p><i class="fa-solid fa-lightbulb"></i>Tip: Make sure your details are correct. You can always go back and edit later.</p>
+            <div>
+                <button class="but1" type="button" onclick="back()"><i class="fa-solid fa-arrow-left"></i>Back</button>
+                <button class="but2" type="reset"><i class="fa-solid fa-rotate-left"></i>Reset</button>
+                <button class="but3" type="submit" onclick="next()">Next<i class="fa-solid fa-arrow-right"></i></button>
+            </div>
+          
+            </div>
+
+            </form>
+            </div>
+        </div>
+        <script src="tracker.js"></script>
+    </body>
+    <script src="education.js"></script>
+</html>

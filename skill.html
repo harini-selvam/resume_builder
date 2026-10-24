@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Skills</title>
+        <link href="tracker.css" rel="stylesheet">
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.1/css/all.min.css" rel="stylesheet">
+        <style>
+           .skills-grid{
+                display:grid;
+                grid-template-columns:1fr 1fr;
+                gap:15px 40px;
+                margin-top:15px;
+            }
+
+            .content h2{
+                margin-top: 0;
+                margin-bottom: 20px;
+            }
+
+            .skill-item{
+                display:flex;
+                align-items:center;
+                gap:8px;
+            }
+
+            .skill-item input[type="checkbox"]{
+                width:18px;
+                height:18px;
+            }
+
+            .skill-item input[type="text"]{
+                width:150px;
+            }
+
+            .but1,.but2,.but3{
+                width: 145px;
+                height: 48px;
+                /* background: #FFFFFF; */
+                color: #6B7280;
+                border: 1px solid #D9E3F0;
+                border-radius: 12px;
+                font-size: 16px;
+                font-weight: 500;
+                cursor: pointer;
+                background-color: #f4f8ff;
+                color: black;
+            }
+
+            .myform{
+                background-color:#fff;
+                width: 850px;
+                height: auto;
+                border-radius: 20px;
+                box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+                border: 1px solid #e7eef8;
+                padding: 25px;
+            }
+
+            input{
+                height: 48px;
+                border-radius: 10px;
+                border: 1px solid #d9e3f0;
+                background: #ffffff;
+                padding-left: 15px;
+                font-size: 15px;
+            }
+
+            label{
+                display: flex;
+                margin-bottom: 8px;
+                font-weight: 600;
+                font-size: 16px;
+                color: #2c3e50;
+                gap: 8px;
+            }
+
+            p{
+                font-size: 18px;
+                background-color: #f4f8ff;
+                border-radius: 10px;
+                border: 1px solid #d9e3f0;
+                padding: 16px 20px;
+                width: 80%;
+            }
+            .but1:hover,.but2:hover,.but3:hover{
+                background-color: #1daed8;
+            }
+        </style>
+    </head>
+       <body>
+
+    <div class="container">
+
+        <!-- Tracker -->
+        <div class="tracker" data-step="3">
+
+            <h2>TRACKER</h2>
+
+            <div class="step" data-number="1">
+                <div class="circle">1</div>
+                <span>Personal Details</span>
+            </div>
+
+            <div class="line"></div>
+
+            <div class="step" data-number="2">
+                <div class="circle">2</div>
+                <span>Education</span>
+            </div>
+
+            <div class="line"></div>
+
+            <div class="step" data-number="3">
+                <div class="circle">3</div>
+                <span>Skills</span>
+            </div>
+
+            <div class="line"></div>
+
+            <div class="step" data-number="4">
+                <div class="circle">4</div>
+                <span>Projects</span>
+            </div>
+
+            <div class="line"></div>
+
+            <div class="step experience-step" data-number="5">
+                <div class="circle">5</div>
+                <span>Experience</span>
+            </div>
+
+            <div class="line"></div>
+
+            <div class="step" data-number="6">
+                <div class="circle">6</div>
+                <span>Resume</span>
+            </div>
+
+        </div>
+
+        <!-- Content -->
+        <div class="content">
+
+            <h2><i class="fa-solid fa-laptop-code"></i>Skill</h2>
+
+            <form class="myform">
+
+                <div class="skill">
+                     <div class="top">
+                    <a href="home.html">Home</a>
+                </div>
+
+                    <!-- Technical Skills -->
+                    <div class="tskill">
+
+                        <label style="text-decoration: underline;"><i class="fa-solid fa-laptop-code"></i>Technical Skills<span style="color:red">*</span></label>
+
+                        <div class="skills-grid">
+
+                            <div class="skill-item">
+                                <input type="checkbox" id="html">
+                                <label for="html">HTML</label>
+                            </div>
+
+                            <div class="skill-item">
+                                <input type="checkbox" id="css">
+                                <label for="css">CSS</label>
+                            </div>
+
+                            <div class="skill-item">
+                                <input type="checkbox" id="javascript">
+                                <label for="javascript">JavaScript</label>
+                            </div>
+
+                            <div class="skill-item">
+                                <input type="checkbox" id="python">
+                                <label for="python">Python</label>
+                            </div>
+
+                            <div class="skill-item">
+                                <input type="checkbox" id="sql">
+                                <label for="sql">SQL</label>
+                            </div>
+
+                            <div class="skill-item">
+                                <label>Other</label>
+                                <input type="text" id="othertech" placeholder="Other Skill">
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <br>
+
+                    <!-- Soft Skills -->
+                    <div class="sskill">
+
+                        <label style="text-decoration: underline;"><i class="fa-solid fa-people-group"></i>Soft Skills<span style="color:red">*</span></label>
+
+                        <div class="skills-grid">
+
+                            <div class="skill-item">
+                                <input type="checkbox" id="communication">
+                                <label for="communication">Communication</label>
+                            </div>
+
+                            <div class="skill-item">
+                                <input type="checkbox" id="teamwork">
+                                <label for="teamwork">Teamwork</label>
+                            </div>
+
+                            <div class="skill-item">
+                                <input type="checkbox" id="creativity">
+                                <label for="creativity">Creativity</label>
+                            </div>
+
+                            <div class="skill-item">
+                                <input type="checkbox" id="adaptability">
+                                <label for="adaptability">Adaptability</label>
+                            </div>
+
+                            <div class="skill-item">
+                                <label>Other</label>
+                                <input type="text" id="othersoft" placeholder="Other Skill">
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <br>
+
+                    <!-- Language -->
+                    <div class="lang">
+
+                        <label style="text-decoration: underline;"><i class="fa-solid fa-language"></i>Language<span style="color:red">*</span></label>
+
+                        <div class="skills-grid">
+
+                            <div class="skill-item">
+                                <input type="checkbox" id="tamil">
+                                <label for="tamil">Tamil</label>
+                            </div>
+
+                            <div class="skill-item">
+                                <input type="checkbox" id="english">
+                                <label for="english">English</label>
+                            </div>
+
+                            <div class="skill-item">
+                                <input type="checkbox" id="hindi">
+                                <label for="hindi">Hindi</label>
+                            </div>
+
+                            <div class="skill-item">
+                                <label>Other</label>
+                                <input type="text" id="otherlang" placeholder="Language">
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </form>
+
+            <p><i class="fa-solid fa-lightbulb"></i>Tip: Make sure your details are correct. You can always go back and edit later.</p>
+            <div>
+                <button class="but1" type="button" onclick="back()"><i class="fa-solid fa-arrow-left"></i>Back</button>
+                <button class="but2" type="reset"><i class="fa-solid fa-rotate-left"></i>Reset</button>
+                <button class="but3" type="submit" onclick="move()">Next<i class="fa-solid fa-arrow-right"></i></button>
+            </div>
+        </div>
+
+    </div>
+
+    <script src="tracker.js"></script>
+
+</body>
+    <script>
+        function move(){
+            
+        localStorage.setItem("html",document.getElementById("html").checked? "HTML" :"");
+        localStorage.setItem("css",document.getElementById("css").checked? "CSS":"");
+        localStorage.setItem("javascript",document.getElementById("javascript").checked? "Java Script":"");
+        localStorage.setItem("python",document.getElementById("python").checked? "Python":"");
+        localStorage.setItem("sql",document.getElementById("sql").checked? "SQL":"");
+        localStorage.setItem("othertech",document.getElementById("othertech").value);
+
+        localStorage.setItem("communication",document.getElementById("communication").checked? "Communication":"");
+        localStorage.setItem("teamwork",document.getElementById("teamwork").checked? "Teamwork":"");
+        localStorage.setItem("creativity",document.getElementById("creativity").checked? "Creativity":"");
+        localStorage.setItem("adaptability",document.getElementById("adaptability").checked? "Adaptability":"");
+        localStorage.setItem("othersoft",document.getElementById("othersoft").value);
+
+        localStorage.setItem("tamil",document.getElementById("tamil").checked? "Tamil":"");
+        localStorage.setItem("english",document.getElementById("english").checked? "English":"");
+        localStorage.setItem("hindi",document.getElementById("hindi").checked? "Hindi":"");
+        localStorage.setItem("otherlang",document.getElementById("otherlang").value);
+        window.location.href = "project.html"
+        }
+
+        function back(){
+        window.location.href = "education_detail.html"
+        }
+
+
+    </script>
+</html>

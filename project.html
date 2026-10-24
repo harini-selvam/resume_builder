@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Project details</title>
+        <link href="tracker.css" rel="stylesheet">
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.1/css/all.min.css" rel="stylesheet">
+        <style>
+            .but1,.but2,.but3{
+                width: 145px;
+                height: 48px;
+                /* background: #FFFFFF; */
+                color: #6B7280;
+                border: 1px solid #D9E3F0;
+                border-radius: 12px;
+                font-size: 16px;
+                font-weight: 500;
+                cursor: pointer;
+                background-color: #f4f8ff;
+                color: black;
+            }
+
+            .myform{
+                background-color:#fff;
+                width: 850px;
+                height: auto;
+                border-radius: 20px;
+                box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+                border: 1px solid #e7eef8;
+                padding: 25px;
+            }
+
+            input{
+                height: 48px;
+                border-radius: 10px;
+                border: 1px solid #d9e3f0;
+                background: #ffffff;
+                padding-left: 15px;
+                font-size: 15px;
+            }
+
+            label{
+                display: flex;
+                margin-bottom: 8px;
+                font-weight: 600;
+                font-size: 16px;
+                color: #2c3e50;
+                gap: 8px;
+            }
+
+            p{
+                font-size: 18px;
+                background-color: #f4f8ff;
+                border-radius: 10px;
+                border: 1px solid #d9e3f0;
+                padding: 16px 20px;
+                width: 80%;
+            }
+            .but1:hover,.but2:hover,.but3:hover{
+                background-color: #1daed8;
+            }
+
+            .row{
+                display: flex;
+                gap: 40px;
+            }
+
+            .field{
+                margin-bottom: 24px;
+                flex: 1;
+            }
+
+            .field input,.myform textarea{
+                width: 60%;
+            }
+        
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <div class="tracker" data-step="4">
+
+    <h2>TRACKER</h2>
+
+    <div class="step" data-number="1">
+        <div class="circle">1</div>
+        <span>Personal Details</span>
+    </div>
+
+    <div class="line"></div>
+
+    <div class="step" data-number="2">
+        <div class="circle">2</div>
+        <span>Education</span>
+    </div>
+
+    <div class="line"></div>
+
+    <div class="step" data-number="3">
+        <div class="circle">3</div>
+        <span>Skills</span>
+    </div>
+
+    <div class="line"></div>
+
+    <div class="step" data-number="4">
+        <div class="circle">4</div>
+        <span>Projects</span>
+    </div>
+
+    <div class="line"></div>
+
+    <div class="step experience-step" data-number="5">
+        <div class="circle">5</div>
+        <span>Experience</span>
+    </div>
+
+    <div class="line"></div>
+
+    <div class="step" data-number="6">
+        <div class="circle">6</div>
+        <span>Resume</span>
+    </div>
+
+</div>
+            <div class="content">
+                <h2><i class="fa-solid fa-folder-open"></i>Project</h2>
+                 <div class="top">
+                    <a href="home.html">Home</a>
+                </div>
+            <form class="myform">
+                <div class="pro">
+                
+                    <div class="field">
+                        <label><i class="fa-solid fa-diagram-project"></i>Project name:</label>
+                        <input type="text" id="proname"><br>
+                    </div>
+                    <div class="field">
+                    <label><i class="fa-solid fa-file-lines"></i>Project description</label>
+                    <textarea id="prodesc" rows="3" cols="40"
+                    placeholder="--Give about Project description--"></textarea><br>
+                    </div>
+               
+                
+                    <div class="field">
+                    <label><i class="fa-solid fa-gears"></i>Tools used</label>
+                    <textarea id="tool" rows="3" cols="40"
+                    placeholder="-About tools used-"></textarea>
+                    </div>
+</div>
+                    <div class="course">
+                    <label><i class="fa-solid fa-certificate"></i>Course(If any):</label>
+                    <textarea id="course" rows="3" cols="40"
+                    placeholder="--Name of the courses--"></textarea>
+                    </div>
+            </form>
+            <p><i class="fa-solid fa-lightbulb"></i>Tip: Make sure your details are correct. You can always go back and edit later.</p>
+            <div>
+                <button class="but1" type="button" onclick="back()"><i class="fa-solid fa-arrow-left"></i>Back</button>
+                <button class="but2" type="reset"><i class="fa-solid fa-rotate-left"></i>Reset</button>
+                <button class="but3" type="submit" onclick="next()">Next<i class="fa-solid fa-arrow-right"></i></button>
+            </div>
+            </div>
+        </div>
+        <script src="tracker.js"></script>
+    </body>
+    <script>
+        function next(){
+            const resumeType = sessionStorage.getItem("resumeType");
+            if(resumeType=="fresher"){
+                window.location.href = "template.html"
+            }
+             else{
+                window.location.href = "experience.html"
+             }   
+
+            var pname = document.getElementById("proname").value;
+            var pdes = document.getElementById("prodesc").value;
+            var ptool = document.getElementById("tool").value;
+            var cour = document.getElementById("course").value;
+
+            localStorage.setItem("proname",pname);
+            localStorage.setItem("prodesc",pdes);
+            localStorage.setItem("tool",ptool)
+            localStorage.setItem("course",cour);
+
+        }
+
+        function back(){
+        window.location.href = "skill.html"
+        }
+
+       
+    </script>
+</html>
