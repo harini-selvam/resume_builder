@@ -73,16 +73,28 @@
             background:#1b3556;
             color:#fff;
             cursor:pointer;
+
+             
         }
 
         button:hover{
             background:#315b8a;
+        }
+
+        .top{
+            position: fixed;
+            top:20px;
+            right: 30px;
+            font-size: 30px;
         }
     </style>
 
 </head>
 
 <body>
+    <div class="top">
+                    <a href="home.html">Home</a>
+                </div>
 
 <div class="resume">
 
@@ -211,7 +223,8 @@
     </div>
 
 </div>
-<button onclick="downloadResume()">Download</button>
+    <button onclick="downloadResume()" class="but2">Download</button>
+<
 </body>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>

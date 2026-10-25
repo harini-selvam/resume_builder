@@ -38,10 +38,10 @@
                 flex: 1;
             }
 
-            input::placeholder{
+            /* input::placeholder{
                 color: #9ca3af;
                 font-size: 14px;
-            }
+            } */
 
             #row{
                 display: flex;
@@ -136,36 +136,36 @@
 
                 </div>
             <div class="content">
-                 <h3><i class="fa-solid fa-user"></i> Personal details</h3>
-                  <div class="top">
+                <h3><i class="fa-solid fa-user"></i> Personal details</h3>
+                <div class="top">
                     <a href="home.html">Home</a>
                 </div>
             <form id="myform">
                 <div id="row">
                     <div id="field">
                         <label><i class="fa-solid fa-user"></i>First Name<span style="color:red">*</span>:</label> 
-                        <input type="text" id="fname"><br><br>
+                        <input type="text" id="fname" required><br><br>
                     </div>
                 
 
                 
                     <div id="field">
                         <label><i class="fa-solid fa-user"></i></i>Last Name<span style="color:red">*</span>:</label>
-                        <input type="text" id="lname"><br><br>
+                        <input type="text" id="lname" required><br><br>
                     </div>
                 </div>
                 
                 <div id="row">
                     <div id="field">
                         <label><i class="fa-solid fa-envelope"></i>Email address<span style="color:red">*</span>:</label>
-                        <input type="email" id="mail"><br><br>
+                        <input type="email" id="mail" required><br><br>
                     </div>
                
 
                 
                     <div id="field">
                         <label><i class="fa-solid fa-phone"></i>Phone number<span style="color:red">*</span>:</label>
-                        <input type="number" id="num"><br><br>
+                        <input type="number" id="num" required><br><br>
                     </div>
                 </div>
 
@@ -177,7 +177,7 @@
                 
                     <div id="field">
                         <label><i class="fa-solid fa-location-pin"></i>Location<span style="color:red">*</span>:</label>
-                        <input type="text" id="loc"><br><br>
+                        <input type="text" id="loc" required><br><br>
                     </div>
                 </div>
 
@@ -186,7 +186,7 @@
             <p><i class="fa-solid fa-lightbulb"></i>Tip:Make sure your details are correct.You can always go back and edit later</p>
             <div id="buttons">
                 <button class="but2" type="reset"><i class="fa-solid fa-rotate-left"></i>Reset</button>
-                <button class="but3" type="button" onclick="save()">Next<i class="fa-solid fa-arrow-right"></i></button>
+                <button class="but3" type="submit" onclick="save()">Next<i class="fa-solid fa-arrow-right"></i></button>
             </div>
             </div>
   
