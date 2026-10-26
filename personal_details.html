@@ -140,7 +140,7 @@
                 <div class="top">
                     <a href="home.html">Home</a>
                 </div>
-            <form id="myform">
+            <form id="myform" onsubmit="return save(event)">
                 <div id="row">
                     <div id="field">
                         <label><i class="fa-solid fa-user"></i>First Name<span style="color:red">*</span>:</label> 
@@ -182,18 +182,19 @@
                 </div>
 
                  
-            </form>
+           
             <p><i class="fa-solid fa-lightbulb"></i>Tip:Make sure your details are correct.You can always go back and edit later</p>
             <div id="buttons">
                 <button class="but2" type="reset"><i class="fa-solid fa-rotate-left"></i>Reset</button>
-                <button class="but3" type="submit" onclick="save()">Next<i class="fa-solid fa-arrow-right"></i></button>
+                <button class="but3" type="submit" >Next<i class="fa-solid fa-arrow-right"></i></button>
             </div>
             </div>
-  
+   </form>
         <script src="tracker.js"></script>
     </body>
     <script>     
-        function save(){
+        function save(event){
+        event.preventDefault(); 
         var ufname = document.getElementById("fname").value;
         var ulname = document.getElementById("lname").value;
         var emailid = document.getElementById("mail").value;
@@ -207,6 +208,7 @@
         localStorage.setItem("linkk",url);
         localStorage.setItem("loc",loca);
         window.location.href = "education_detail.html";
+        return false;
         }
     </script> 
 </html>

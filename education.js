@@ -1,21 +1,36 @@
         function percentage(){
             var cgpa = document.getElementById("cgpa").value;
             var tot = document.getElementById("ctot").value;
-            document.getElementById("cpercent").value = (cgpa/tot)*100
-        }
+            if (cgpa && tot && tot > 0) {
+                    var result = (cgpa / tot) * 100;
+                    document.getElementById("cpercent").value = result.toFixed(2);
+                } else{
+                    document.getElementById("cpercent").value = "";
+                }
+         }
 
         function higher_sec(){
             var mark = document.getElementById("mark").value;
             var total = document.getElementById("tot").value;
-            ans = (mark/total)*100
-            document.getElementById("percent").value = ans.toFixed(2);
+            if(mark && total && total>0){
+                ans = (mark/total)*100
+                document.getElementById("percent").value = ans.toFixed(2);
+            }
+            else{
+                document.getElementById("percent").value="";
+            }
         }
 
         function s2percent(){
             var mark = document.getElementById("smark").value;
             var total = document.getElementById("stot").value;
-            ans = (mark/total)*100
-            document.getElementById("spercent").value = ans.toFixed(2);
+             if(mark && total && total>0){
+                ans = (mark/total)*100
+                document.getElementById("spercent").value = ans.toFixed(2);
+            }
+            else{
+                document.getElementById("spercent").value="";
+            }
         }
 
          const myForm = document.querySelector('.myform'); 
