@@ -7,12 +7,17 @@
         var userphn = localStorage.getItem("num");
         var userurl = localStorage.getItem("linkk");
         var userlocation = localStorage.getItem("loc");
+        var userjob = localStorage.getItem("job-role");
+        var userjobdesc = localStorage.getItem("jdesc");
 
         document.getElementById("name").innerHTML =
         userfname + " " + userlname;
 
-        // document.getElementById("role").innerHTML =
-        // jname;
+        document.getElementById("role").innerHTML =
+        userjob;
+
+        document.getElementById("objective").innerHTML =
+        userjobdesc;
 
         document.getElementById("email").innerHTML =
         useremail;

@@ -126,9 +126,8 @@
 
         <div class="content" id="objective">
 
-            <p>
-                Results-driven and detail-oriented professional seeking an opportunity to contribute my knowledge and grow within an organization.
-            </p>
+            <p id="objective">
+               </p>
 
         </div>
 
@@ -175,12 +174,6 @@
         </div>
 
     </div>
-
-
-
-    
-
-
 
     <div class="section">
 
@@ -236,9 +229,12 @@ var useremail = localStorage.getItem("mail") || "";
 var userphn = localStorage.getItem("num") || "";
 var userurl = localStorage.getItem("linkk") || "";
 var userlocation = localStorage.getItem("loc") || "";
+var userjob = localStorage.getItem("job-role");
+var userjobdesc = localStorage.getItem("jdesc");
 
 document.getElementById("name").innerHTML = userfname + " " + userlname;
-document.getElementById("role").innerHTML = "Fresher";
+document.getElementById("role").innerHTML = userjob;
+document.getElementById("objective").innerHTML = userjobdesc;
 document.getElementById("email").innerHTML = useremail;
 document.getElementById("phone").innerHTML = userphn;
 document.getElementById("url").innerHTML = userurl;

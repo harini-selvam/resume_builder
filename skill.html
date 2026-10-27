@@ -138,7 +138,6 @@
 
         </div>
 
-        <!-- Content -->
         <div class="content">
 
             <h2><i class="fa-solid fa-laptop-code"></i>Skill</h2>
@@ -185,6 +184,8 @@
                             <div class="skill-item">
                                 <label>Other</label>
                                 <input type="text" id="othertech" placeholder="Other Skill">
+                                <button type="button" class="but1" onclick="addtech()">Add</button>
+                                <div id="techlist"></div>
                             </div>
 
                         </div>
@@ -223,6 +224,8 @@
                             <div class="skill-item">
                                 <label>Other</label>
                                 <input type="text" id="othersoft" placeholder="Other Skill">
+                                <button type="button" class="but2" onclick="addsoft()">Add</button>
+                                <div id="softlist"></div>
                             </div>
 
                         </div>
@@ -256,6 +259,8 @@
                             <div class="skill-item">
                                 <label>Other</label>
                                 <input type="text" id="otherlang" placeholder="Language">
+                                <button type="button"class="but3" onclick="addlang()">Add</button>
+                                <div id="langlist"></div>
                             </div>
 
                         </div>
@@ -280,32 +285,81 @@
 
 </body>
     <script>
-        function move(){
-            
-        localStorage.setItem("html",document.getElementById("html").checked? "HTML" :"");
-        localStorage.setItem("css",document.getElementById("css").checked? "CSS":"");
-        localStorage.setItem("javascript",document.getElementById("javascript").checked? "Java Script":"");
-        localStorage.setItem("python",document.getElementById("python").checked? "Python":"");
-        localStorage.setItem("sql",document.getElementById("sql").checked? "SQL":"");
-        localStorage.setItem("othertech",document.getElementById("othertech").value);
+        let techOther = [];
+        let softOther = [];
+        let langOther = [];
 
-        localStorage.setItem("communication",document.getElementById("communication").checked? "Communication":"");
-        localStorage.setItem("teamwork",document.getElementById("teamwork").checked? "Teamwork":"");
-        localStorage.setItem("creativity",document.getElementById("creativity").checked? "Creativity":"");
-        localStorage.setItem("adaptability",document.getElementById("adaptability").checked? "Adaptability":"");
-        localStorage.setItem("othersoft",document.getElementById("othersoft").value);
-
-        localStorage.setItem("tamil",document.getElementById("tamil").checked? "Tamil":"");
-        localStorage.setItem("english",document.getElementById("english").checked? "English":"");
-        localStorage.setItem("hindi",document.getElementById("hindi").checked? "Hindi":"");
-        localStorage.setItem("otherlang",document.getElementById("otherlang").value);
-        window.location.href = "project.html"
+        function addtech(){
+            let value = document.getElementById("othertech").value;
+            if(value!=""){
+                techOther.push(value);
+                document.getElementById("othertech").value="";
+                showTech();
+            }
         }
 
+        function showTech(){
+            document.getElementById("techList").innerHTML =
+            techOther.join("<br>");
+        }
+
+        function addsoft(){
+            let value = document.getElementById("othersoft").value;
+            if(value!=""){
+                softOther.push(value);
+                document.getElementById("othersoft").value="";
+                showSoft();
+            }
+        }
+
+        function showSoft(){
+            document.getElementById("softList").innerHTML =
+            softOther.join("<br>");
+        }
+
+        function addlang(){
+            let value = document.getElementById("otherlang").value;
+            if(value!=""){
+                langOther.push(value);
+                document.getElementById("otherlang").value="";
+                showLang();
+            }
+        }
+
+        function showLang(){
+                document.getElementById("langList").innerHTML =langOther.join("<br>");
+        }
+
+       function move(){
+            let technical = [];
+            if(html.checked) technical.push("HTML");
+            if(css.checked) technical.push("CSS");
+            if(javascript.checked) technical.push("Java Script");
+            if(python.checked) technical.push("Python");
+            if(sql.checked) technical.push("SQL");
+            technical = technical.concat(techOther);
+
+            let soft = [];
+            if(communication.checked) soft.push("Communication");
+            if(teamwork.checked) soft.push("Teamwork");
+            if(creativity.checked) soft.push("Creativity");
+            if(adaptability.checked) soft.push("Adaptability");
+            soft = soft.concat(softOther);
+
+            let languages=[];
+            if(tamil.checked) languages.push("Tamil");
+            if(english.checked) languages.push("English");
+            if(hindi.checked) languages.push("Hindi");
+            languages = languages.concat(langOther);
+
+            localStorage.setItem("technicalSkills",JSON.stringify(technical));
+            localStorage.setItem("softSkills",JSON.stringify(soft));
+            localStorage.setItem("languages",JSON.stringify(languages));
+
+            window.location.href="project.html";
+        }
         function back(){
         window.location.href = "education_detail.html"
         }
-
-
     </script>
 </html>

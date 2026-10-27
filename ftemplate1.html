@@ -206,8 +206,7 @@
 
                 <h2>Career Objective</h2>
 
-                <p id="objective">Enthusiastic and highly motivated graduate with a strong academic foundation and a quick learning curve. Possesses excellent communication, analytical, and problem-solving skills, with a proven ability to work effectively in team environments. Seeking a challenging entry-level position where I can apply my foundational knowledge, contribute to company growth, and continuously develop my professional skillset.</p>
-
+                <p id="objective"></p>
             </div>
 
 
@@ -264,12 +263,17 @@ var useremail = localStorage.getItem("mail");
 var userphn = localStorage.getItem("num");
 var userurl = localStorage.getItem("linkk");
 var userlocation = localStorage.getItem("loc");
+var userjob = localStorage.getItem("job-role");
+var userjobdesc = localStorage.getItem("jdesc");
 
 document.getElementById("name").innerHTML =
 userfname + " " + userlname;
 
+document.getElementById("objective").innerHTML =
+userjobdesc;
+
 document.getElementById("role").innerHTML =
-"Fresher";
+userjob;
 
 document.getElementById("email").innerHTML =
 useremail;

@@ -12,16 +12,6 @@
                 margin-bottom: 10px;
             }
 
-            /* .clg,.schl1,.schl2{
-                background-color:#fff;
-                width: 900px;
-                height: auto;
-                border-radius: 20px;
-                box-shadow: 0 8px 25px rgba(0,0,0,0.08);
-                border: 1px solid #e7eef8;
-                padding:20px 40px 5px 40px;
-            } */
-
             input{
                 height: 40px;
                 border-radius: 10px;
@@ -97,68 +87,69 @@
                 margin-bottom:20px;
             }
 
-.header{
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    padding:18px 25px;
-    background:#fff;
-    border:1px solid #E7EEF8;
-    border-radius:15px;
-    cursor:pointer;
-    box-shadow:0 4px 15px rgba(0,0,0,.05);
-}
+            .header{
+                display:flex;
+                justify-content:space-between;
+                align-items:center;
+                padding:18px 25px;
+                background:#fff;
+                border:1px solid #E7EEF8;
+                border-radius:15px;
+                cursor:pointer;
+                box-shadow:0 4px 15px rgba(0,0,0,.05);
+            }
 
-.header:hover{
-    background: #EAF2FF;
-}
+            .header:hover{
+                background: #EAF2FF;
+            }
 
-.header span:first-child{
-    font-size: 18px;
-    font-weight: 600;
-    color: #2C3E50;
-}
+            .header span:first-child{
+                font-size: 18px;
+                font-weight: 600;
+                color: #2C3E50;
+            }
 
-.arrow{
-    font-size: 18px;
-    color: #2563EB;
-    transition: 0.3s;
-}
+            .arrow{
+                font-size: 18px;
+                color: #2563EB;
+                transition: 0.3s;
+            }
 
-.clg,
-.schl1,
-.schl2{
-    width: 900px;
-    background: white;
-    border: 1px solid #E7EEF8;
-    border-radius: 20px;
-    box-shadow: 0 8px 25px rgba(0,0,0,0.08);
-    padding: 20px 40px;
-    margin-bottom: 20px;
-}
+            .clg,
+            .schl1,
+            .schl2{
+                width: 900px;
+                background: white;
+                border: 1px solid #E7EEF8;
+                border-radius: 20px;
+                box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+                padding: 20px 40px;
+                margin-bottom: 20px;
+                height: 400px;
+            }
 
-.schl1,
-.schl2{
-    display: none;
-}
+            .schl1,
+            .schl2{
+                display: none;
+            }
 
-.save{
-    width:150px;
-    height:45px;
-    background:#2563EB;
-    color:white;
-    border:none;
-    border-radius:10px;
-    font-size:15px;
-    font-weight:600;
-    cursor:pointer;
-    float:right;
-    margin-top:15px;
-}
+            .save{
+                width:150px;
+                height:45px;
+                background:#2563EB;
+                color:white;
+                border:none;
+                border-radius:10px;
+                font-size:15px;
+                font-weight:600;
+                cursor:pointer;
+                float:right;
+                margin-top:15px;
+            }
 
-.save:hover{
-    background:#1D4ED8;
-}
+            .save:hover{
+                background:#1D4ED8;
+            }
 
         </style>
     </head>
@@ -221,67 +212,98 @@
                     <i id="clgarrow" class="fa-solid fa-chevron-down"></i>
                 </div>
                 <div class="clg">
-                    <div class="row">
-                        <div class="field">
-                            <label><i class="fa-solid fa-school"></i>College Name<span style="color:red">*</span>:</label>
-                            <input type="text" id="cname" required><br><br>
-
-                        </div>
-                        <div class="field">
-                            <label><i class="fa-solid fa-graduation-cap"></i>Degree<span style="color:red">*</span></label>
-                            <input type="text" list="degrees" id="degree" placeholder="Type or select your degree" id="degree" style="width: 400px;">
-
-                            <datalist id="degrees">
-                                <option value="BCA">
-                                <option value="B.Sc Computer Science">
-                                <option value="B.Sc Mathematics">
-                                <option value="B.Com">
-                                <option value="BBA">
-                                <option value="BE Computer Science">
-                                <option value="BE Mechanical">
-                                <option value="B.Tech IT">
-                                <option value="Diplamo">
-                                <option value="B.Com with CA">
-                                <option value="MCA">
-                                <option value="M.Com">
-                                <option value="MBA">
-                                <option value="M.Tech">
-                            </datalist>
-                            <br><br>
-                        </div>
+            <div class="row">
+                    <div class="field">
+                        <label>
+                            <i class="fa-solid fa-graduation-cap"></i>
+                            Qualification Type<span style="color:red">*</span>:
+                        </label>
+                        <select id="qualType" required>
+                            <option value="">Select</option>
+                            <option value="UG">UG</option>
+                            <option value="PG">PG</option>
+                            <option value="Diploma">Diploma</option>
+                            <option value="PhD">PhD</option>
+                        </select>
                     </div>
-                   
-                   <div class="row">
-                        <div class="field">
-                            <label><i class="fa-solid fa-calendar"></i>Start Year<span style="color:red">*</span>:</label>
-                            <input type="month" id="csyear" required>
-                        </div>
-                        
-                        <div class="field">
-                            <label><i class="fa-solid fa-calendar"></i>End Year<span style="color:red">*</span>:</label>
-                            <input type="month" id="clyear" required><br><br>
-                        </div>
-                   </div> 
-                    
-                   <div class="row">
-                        <div class="field">
-                            <label>CGPA<span style="color:red">*</span>:</label>
-                            <input type="number" id="cgpa" onkeyup="percentage()" max=100 maxlength="3" required>
-                        </div>
-                        <div class="field">
-                            <label>Out of<span style="color:red">*</span>:</label>
-                            <input type="number" id="ctot" onkeyup="percentage()" max=100 maxlength="3" required><br><br>
-                        </div>
-                        <div class="field">
-                            <label><i class="fa-solid fa-percent"></i>Percentage:</label>
-                            <input type="text" id="cpercent">
-                        </div>
-                        <button class="save" type="button" onclick="save_clg()">Save</button>
-                        <button class="save" type="submit" onclick="add()">+ Add another degree</button>
-                   </div>
-                
+                    <div class="field">
+                        <label>
+                            <i class="fa-solid fa-school"></i>
+                            College Name<span style="color:red">*</span>:
+                        </label>
+                        <input type="text" id="cname" required>
+                    </div>
                 </div>
+                <div class="row">
+                    <div class="field">
+                        <label>
+                            <i class="fa-solid fa-book"></i>
+                            Degree<span style="color:red">*</span>:
+                        </label>
+                        <input type="text" 
+                            list="degrees" 
+                            id="degree" 
+                            placeholder="Type or select your degree">
+                        <datalist id="degrees">
+                            <option value="BCA">
+                            <option value="B.Sc Computer Science">
+                            <option value="B.Sc Mathematics">
+                            <option value="B.Com">
+                            <option value="BBA">
+                            <option value="BE Computer Science">
+                            <option value="BE Mechanical">
+                            <option value="B.Tech IT">
+                            <option value="Diploma">
+                            <option value="B.Com with CA">
+                            <option value="MCA">
+                            <option value="M.Com">
+                            <option value="MBA">
+                            <option value="M.Tech">
+                            <option value="PhD">
+                        </datalist>
+                    </div>
                 </div>
+                <div class="row">
+                    <div class="field">
+                        <label>
+                            <i class="fa-solid fa-calendar"></i>
+                            Start Year<span style="color:red">*</span>:
+                        </label>
+                        <input type="month" id="csyear" required>
+                    </div>
+                    <div class="field">
+                        <label>
+                            <i class="fa-solid fa-calendar"></i>
+                            End Year<span style="color:red">*</span>:
+                        </label>
+                        <input type="month" id="clyear" required>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="field">
+                        <label>
+                            CGPA<span style="color:red">*</span>:
+                        </label>
+                        <input type="number" id="cgpa" onkeyup="percentage()" max="100" required>
+                    </div>
+                    <div class="field">
+                        <label>
+                            Out of<span style="color:red">*</span>:
+                        </label>
+                        <input type="number" id="ctot" onkeyup="percentage()" max="100" required>
+                    </div>
+                    <div class="field">
+                        <label>
+                            <i class="fa-solid fa-percent"></i>
+                            Percentage:
+                        </label>
+                        <input type="text" id="cpercent" readonly>
+                    </div>
+                </div>
+                <button class="save" type="button" onclick="save_clg()">
+                    Save
+                </button>
+            </div>
                 
                 <div class="main">
                 <div class="header" onclick="opensec('school1')" >
@@ -316,7 +338,7 @@
                             <label><i class="fa-solid fa-percent"></i>Percentage:</label>
                             <input type="text" id="percent">
                         </div>
-                        <button class="save" type="submit" onclick="save_12th()">Save</button>
+                        <button class="save" type="button" onclick="save_12th()">Save</button>
                     </div>
                 </div>
                 </div>
@@ -354,16 +376,15 @@
                             <label><i class="fa-solid fa-percent"></i>Percentage:</label>
                             <input type="text" id="spercent">
                         </div>
-                        <button type="submit" class="save" onclick="save_10th()">Save</button>
+                        <button type="button" class="save" onclick="save_10th()">Save</button>
                     </div>
                     </div>
                 </div>
-            
-                            <p><i class="fa-solid fa-lightbulb"></i>Tip: Make sure your details are correct. You can always go back and edit later.</p>
+                    <p><i class="fa-solid fa-lightbulb"></i>Tip: Make sure your details are correct. You can always go back and edit later.</p>
             <div>
                 <button class="but1" type="button" onclick="back()"><i class="fa-solid fa-arrow-left"></i>Back</button>
                 <button class="but2" type="reset"><i class="fa-solid fa-rotate-left"></i>Reset</button>
-                <button class="but3" type="submit" onclick="next()">Next<i class="fa-solid fa-arrow-right"></i></button>
+                <button class="but3" type="button" onclick="next()">Next<i class="fa-solid fa-arrow-right"></i></button>
             </div>
           
             </div>
